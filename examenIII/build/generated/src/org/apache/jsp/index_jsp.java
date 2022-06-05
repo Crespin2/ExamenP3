@@ -49,12 +49,19 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>JSP Page</title>\r\n");
+      out.write("        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
-      out.write("        <h1>Bienvenido/a</h1>\r\n");
-      out.write("        <a href=\"Controlador?accion=listarP\">Registrar Productos</a>\r\n");
-      out.write("        <a href=\"Controlador?accion=listarC\">Agregar Nueva Categoria</a>\r\n");
-      out.write("        \r\n");
+      out.write("        <h1>Bienvenido/a</h1><br>\r\n");
+      out.write("        <a href=\"Controlador?accion=listarP\">\r\n");
+      out.write("        <input class=\"btn btn-outline-primary\" type=\"button\" value=\"Registrar Productos\">\r\n");
+      out.write("        </a>\r\n");
+      out.write("        <a href=\"Controlador?accion=listarC\">\r\n");
+      out.write("        <input class=\"btn btn-outline-danger\" type=\"button\" value=\"Agregar Nueva Categoria\">\r\n");
+      out.write("        </a>\r\n");
+      out.write("        ");
+      out.write("\r\n");
+      out.write("        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
