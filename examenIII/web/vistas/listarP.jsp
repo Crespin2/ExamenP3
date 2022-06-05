@@ -28,6 +28,9 @@
                  </script>
                 
             </a>
+             <br>
+             <a href="Controlador?accion=index">Regresar</a>
+            <br>
             <br>
             <br>
             

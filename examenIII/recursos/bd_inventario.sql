@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2022 a las 15:56:05
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 8.0.8
+-- Tiempo de generación: 05-06-2022 a las 22:06:30
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,9 +31,17 @@ USE `bd_inventario`;
 
 CREATE TABLE `tb_categoria` (
   `id_categoria` int(5) NOT NULL,
-  `nom_categoria` varchar(50) NOT NULL,
-  `estado_categoria` tinyint(1) NOT NULL
+  `nom_categoria` varchar(50) DEFAULT NULL,
+  `estado_categoria` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tb_categoria`
+--
+
+INSERT INTO `tb_categoria` (`id_categoria`, `nom_categoria`, `estado_categoria`) VALUES
+(1, 'Muebles', 1),
+(2, 'Ropa', 1);
 
 -- --------------------------------------------------------
 
@@ -50,8 +58,16 @@ CREATE TABLE `tb_producto` (
   `unidad_de_medida` varchar(20) DEFAULT NULL,
   `estado_producto` tinyint(1) DEFAULT NULL,
   `categoria` int(5) DEFAULT NULL,
-  `fecha_entrada` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `fecha_entrada` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tb_producto`
+--
+
+INSERT INTO `tb_producto` (`id_producto`, `nom_producto`, `des_producto`, `stock`, `precio`, `unidad_de_medida`, `estado_producto`, `categoria`, `fecha_entrada`) VALUES
+(1, 'Camisa', 'Talla xl', '9.99', '5.00', 'Unidad', 0, 2, '5-6-2022'),
+(2, 'Mesa', 'Cuadrada 10 mt x 5 mt', '5.00', '9.99', 'mt', 1, 1, '5-6-2022');
 
 --
 -- Índices para tablas volcadas
@@ -78,7 +94,13 @@ ALTER TABLE `tb_producto`
 -- AUTO_INCREMENT de la tabla `tb_categoria`
 --
 ALTER TABLE `tb_categoria`
-  MODIFY `id_categoria` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_categoria` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `tb_producto`
+--
+ALTER TABLE `tb_producto`
+  MODIFY `id_producto` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
